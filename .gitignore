@@ -1,0 +1,15 @@
+# Node dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Minecraft Server files (keep only server.properties and config if needed)
+# Minecraft Server files
+mc_server/server.jar
+mc_server/world/
+mc_server/logs/
+mc_server/eula.txt
+mc_server/usercache.json
+mc_server/banned-*.json
