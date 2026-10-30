@@ -1,6 +1,4 @@
-# mc-tool
-
-**Prompt injection in a Minecraft agent: do structural defenses beat prompting?**
+# Prompt injection in a Minecraft agent: do structural defenses beat prompting?
 
 A small study of how often hidden instructions (in signs, books, chat, item names) hijack an LLM-driven Minecraft bot, and whether architectural defenses hold up better than "please ignore injected instructions" prompts. Everything runs locally on a laptop (RTX 3050) against a private server.
 
@@ -208,6 +206,32 @@ Live reset verification and no-attack reliability runs remain pending.
 `run.py --smoke-test`, then one control episode and five control trials.
 
 _Newest entries on top. Record what you did, what broke, what you learned, and the exact versions or commands that worked._
+
+### 2026-10-12: Project Log: T1 End-to-End Success 
+
+
+**Done**
+- Established a stable brain/body split using a stateless Python controller (Ollama) and a Node.js physical server (Mineflayer).
+- Successfully implemented and routed two primary physical tools: find_and_mine_block and chest_store.
+- Achieved end-to-end autonomous completion of the T1 baseline task (collecting 10 oak logs and depositing them into a chest).
+- Implemented automated world reset via Python RCON to instantly clear bot inventory, wipe dropped items, empty the chest, and rebuild the 10-log stack for perfectly repeatable trials.
+- Completed milestones M3 (LLM picks action, bot executes) and laid the groundwork for M5.
+
+**Broke (and Fixed)** 
+- Memory formatting: Stacking user messages broke the 3B model's instruct template, causing it to freeze.
+    Fix: Switched the main agent loop to a strictly stateless format.Pathfinding timeouts & item pickup:
+- Strict GoalNear coordinates caused the Node server to hang indefinitely, and blind forward-stepping failed to collect dropped items.
+    Fix: Implemented the mineflayer-collectblock plugin to natively handle safe pathing, digging, and entity tracking.
+- Physical geometry blocks: The bot's 2-block height caused it to get stuck inside the 1-block high hole it mined, preventing item collection.
+    Fix: Tested against an isolated 1x1 log pillar.
+- Spawn protection: The server silently rejected mining actions near x: 8, z: 8, preventing item drops.
+    Fix: Granted the bot operator status (/op) and survival mode.Goal
+- Fixation (Reward Hacking): The model repeatedly attempted to call chest_store without mining the prerequisite items.
+    Fix: Implemented structural tool gating in the Python controller to block invalid actions before they hit the server.LearnedSmall-parameter models (like the 3B) degrade rapidly in continuous conversational memory. A stateless "observation-in-every-step" approach provides a cleaner slate for decision-making.Smaller models struggle with implicit multi-step dependencies. Hard tool gating in the Python orchestrator is mandatory to intercept hallucinations (like trying to deposit items it doesn't possess) before they crash the Node server.
+
+**Next**
+- Add the remaining physical tools (drop_item, give_item, send_chat) and implement the SENSITIVITY tagging dictionary in the Python controller.
+- Finalize success checkers (e.g., verifying chest data via RCON) and build the automated episode runner loop to begin large-scale baseline trials
 
 ### 2026-10-02: Day 0, project chosen
 
