@@ -4,6 +4,10 @@ node_modules/
 # Python cache
 __pycache__/
 *.pyc
+.venv/
+/arena.json
+runs/
+.env
 
 # Minecraft Server files (keep only server.properties and config if needed)
 # Minecraft Server files

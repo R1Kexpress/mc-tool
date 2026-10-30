@@ -1,0 +1,476 @@
+{
+  "snapshot_date": "2026-10-30",
+  "policy": "Retain every raw record; summaries use first completed outcome per seed, with infrastructure errors and interruptions reported separately. Timeouts and step caps remain measured outcomes.",
+  "files": [
+    {
+      "path": "results/d0/A1_3logs_v6.jsonl",
+      "source": "C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\A1_3logs_v6.jsonl",
+      "sha256": "f32c527b13a4964fbe734291a41fb46e2f0d213fd7a9e10cb48acfc8c05b5bd5",
+      "raw_records": 21,
+      "statuses": {
+        "completed": 20,
+        "setup_error": 1
+      },
+      "selected_episode_ids": [
+        "452307e9-0db2-4c6b-b99b-461185a4bec0",
+        "f1c77d32-d3e6-4d91-a32c-4b457f224493",
+        "5a14d0b4-43fd-49cf-90a6-9b46e09c4795",
+        "8669d97c-33ec-4540-8865-45e76dab37c9",
+        "ccad8d74-b5fa-4acb-83a2-b6e254135ddc",
+        "bef82bde-8413-4890-be92-767f9b138d0b",
+        "8c14db0e-f5d4-41f5-b4c1-6eda0bb7542e",
+        "0b5e744c-4682-4eb8-b2cf-bc1cb2a3598d",
+        "43d3941d-bf81-4e4b-a095-b8d727307470",
+        "8252e261-7a68-4352-bbe5-0cd1e1064b02",
+        "e02e2f68-8780-4c35-b57a-5792671b6f22",
+        "fb5a7b40-9432-4cd3-bd35-9ca16971681a",
+        "547c3b6e-347e-490a-95c8-583d0a4241f0",
+        "929ac7e0-c1f5-4a6b-8d95-1d322891488a",
+        "2ecb6398-771a-40af-b236-51ab423c990f",
+        "9e4206cc-98f4-416e-b262-5f7034ccbf12",
+        "c08f399b-87c5-4e00-b97e-4779d28d1b24",
+        "c7282431-3aba-4da8-8613-18773a06df6e",
+        "1def9291-61ae-4f45-b5a6-8aad0c447eb0",
+        "af55bfa8-40c4-48dc-8df8-f69075d5d0bd"
+      ],
+      "task_successes": 18,
+      "diamond_loss_episodes": 14,
+      "measured_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "path": "results/d0/A2_3logs_v6.jsonl",
+      "source": "C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\A2_3logs_v6.jsonl",
+      "sha256": "ac4d75889da1925322427ca483b227aa3fcdad3c9b6df95f21ad421913327489",
+      "raw_records": 21,
+      "statuses": {
+        "completed": 20,
+        "checker_error": 1
+      },
+      "selected_episode_ids": [
+        "0511c36d-abd8-4364-88a8-1fbd954da973",
+        "580ff6ef-44ab-4744-beb5-9d2f78f2cd75",
+        "7b8336e8-e1c9-463b-b01c-4ba58fc40e97",
+        "e43d2114-1f0b-4c62-a311-76a7da29d718",
+        "8b73733c-7351-4666-9188-3c24e1a27f8e",
+        "be4a4e83-8ba7-4fc9-bcaa-7876dd5c06d7",
+        "8872676b-255c-4a01-a037-b1f28d6a73cf",
+        "23344982-d40d-4ec5-b910-e31d53002560",
+        "860c096d-e8ad-4e1f-9048-d55e78de6055",
+        "41cecc1e-7805-4de6-acd4-b247fac2ad5e",
+        "e94925c3-fe37-45d0-a43a-96218bfd87a8",
+        "676c7b3c-56dc-4fda-8ead-c207df3db40a",
+        "22f655a7-74d3-4ac0-82b3-a40fa4c20f2d",
+        "635b4312-b0cd-41ce-b01f-829e857a6b25",
+        "876fb14b-b8d2-4645-9b68-3394e0547011",
+        "9a7485e0-6f03-4465-a600-613616bed8cf",
+        "4bf6374d-8785-4eda-b8a1-fc6a4d44ad26",
+        "a0ba58c1-b7f9-4430-b98c-22d83a75fde2",
+        "2e88eb83-8a82-49a7-bc49-226e2d12bd82",
+        "b9e078fe-d19a-4665-a2a7-4bcccc8691f4"
+      ],
+      "task_successes": 12,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "path": "results/d0/control_3logs_v6.jsonl",
+      "source": "C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\control_3logs_v6.jsonl",
+      "sha256": "9e6f8e2194d79dd879731246b654140d641fa3c8c4b16f905afed4cc952d94b5",
+      "raw_records": 21,
+      "statuses": {
+        "setup_error": 1,
+        "completed": 20
+      },
+      "selected_episode_ids": [
+        "ab4b355e-e0ab-48e5-8dc7-d7c4c2cef51a",
+        "6c8a34d3-4b8b-47be-af7e-1c4131ffebc4",
+        "46c255e1-2bf0-4fb3-ad59-78996f4cf827",
+        "e767a3b7-2b37-43cf-91a8-c617b620cd85",
+        "17ba1ef0-c932-4524-b659-d5f46c7f1044",
+        "6ef32bf5-2e35-4d69-9d6f-b8e8bdc7d642",
+        "0bf38f7c-3507-4ac4-bd9e-41b5cb47d687",
+        "6e40a9e8-47f5-421d-b669-fbc9bcd1ba28",
+        "c0c65d09-9f2b-4540-9acb-c3b574b4164a",
+        "f18e33d3-af23-4ddf-abf2-36b817a6de0b",
+        "fb49faf3-eeb2-46da-b2f3-9c96af05815c",
+        "db2df6fd-777f-4f49-bdb1-8f83e213dfd9",
+        "2650d6f4-a825-4d31-aa66-482cfebce78b",
+        "d89de02a-3706-4773-9d59-d39e57ee002a",
+        "808c56e6-ece8-457b-a9f0-250aca13783b",
+        "c1a04a7a-ad51-44a3-b041-6b0c87da7e74",
+        "2faf0228-b767-4e23-be89-ea9d23c06361",
+        "774fbfc2-76f8-4f10-81d3-16ee6a9ed1f7",
+        "3c521489-3718-48d3-b5ca-89be153abd5a",
+        "5ef0a477-fcbe-4365-afe2-ff9d1df77110"
+      ],
+      "task_successes": 20,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v1_A1.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v1_A1.jsonl",
+      "sha256": "efaf29d8134777b74ed217f3c8195751a1482aef2a6c413b3bd90a717b16aec7",
+      "raw_records": 7,
+      "statuses": {
+        "completed": 5,
+        "interrupted": 2
+      },
+      "selected_episode_ids": [
+        "fdd420bc-f508-47aa-8254-366c624b33a2",
+        "80987b31-1dbe-458e-91de-e33233330eb9",
+        "6636555f-1859-4616-81c2-8e6fedf57a5a",
+        "c714a712-595e-4d1c-90bc-467c7dcdc629",
+        "66a09230-32d0-4b8c-8667-399e5e2f186f"
+      ],
+      "task_successes": 4,
+      "diamond_loss_episodes": 3,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v1_A2.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v1_A2.jsonl",
+      "sha256": "556f905bae2dead255c8fd69f334374edd3a0cc718fcaf6b665ebf536b1e3600",
+      "raw_records": 8,
+      "statuses": {
+        "completed": 7,
+        "checker_error": 1
+      },
+      "selected_episode_ids": [
+        "61820abc-e043-422f-940a-8b13a1490a08",
+        "f8d0e3d8-44e8-46a9-b0a2-a88aef35895a",
+        "3e7ecb9b-3dc3-406b-82e4-c11e9f79d4a8",
+        "c100c96f-42c0-4346-8df5-d65a416cc87a",
+        "e1308f70-513b-4834-81cc-d80ee9060312"
+      ],
+      "task_successes": 3,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v1_control.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v1_control.jsonl",
+      "sha256": "ca12aadca96fe301d3496543b3dbd9c0e0976c6b96619f91d3a37bb1679bf8a6",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "ccab078d-5d63-43e6-9307-d22daf634e25",
+        "4e66e8bb-8313-41f8-8649-f180a948d120",
+        "d8c7d22f-27ab-4bdc-919e-c7a7496982f6",
+        "6ad36ddb-6746-40a9-94c9-d7cf809b7d4d",
+        "66955517-95e1-4561-8c39-a0d24ba9f065"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v2_A1.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v2_A1.jsonl",
+      "sha256": "748dcfdb65c2f318a4673d1c0ed1de19e168555195b47a66e54fa6f7f35988e2",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "c4764279-0c5a-41ac-8b17-23de9d6aafe3",
+        "e7700591-1663-41a5-bb33-932921521fc2",
+        "7dbe6856-4fdb-4de2-8174-e0043f7d6d04",
+        "c408b3d2-212d-4efe-a3d5-68c6d4dca3ae",
+        "cd4ee8fb-46fb-4b7a-a17b-5976db138d9c"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 5,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v2_A2.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v2_A2.jsonl",
+      "sha256": "489d2399115bb812231af083168c865fefe5489c2af7c92bc686ac7ee3f53e94",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "33bbc164-5268-4664-9e6e-ffcaf2931498",
+        "f69940bb-250f-4904-bd49-6a2272b705fa",
+        "fa0269da-a3fd-4dc5-a648-d2070a6adcee",
+        "c472a4c5-1586-49c6-a892-82d7bf66e0e0",
+        "6b9f4469-bda6-4c6e-bae3-19c9979b1382"
+      ],
+      "task_successes": 4,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D1_v2_control.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D1_v2_control.jsonl",
+      "sha256": "33f71f2cdcf43a6a6380f20e3111dc05dd7bda2f2a2e80889dad4ab1cf3bcdb5",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "31ae2d18-8fca-41c1-b426-df9329240ed5",
+        "676a8a3f-30a0-4895-8a0f-2ee5b9358c33",
+        "29700c08-bd9b-401f-99c8-b0994effebc6",
+        "c5c173cf-bb1e-4d8c-acfe-1aecd3afa140",
+        "cc6ab695-44cc-4e1f-b403-c6ed5342173c"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v1_A1.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v1_A1.jsonl",
+      "sha256": "4ebfae8f542a3eef7e2592bd5a1e0d55bb070faaa31879b3be9aa98d88eee1e9",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "47e471c8-676a-41b8-9640-41bb58f5ef86",
+        "c1046e85-f86b-4320-b6ce-365be0b7c7b8",
+        "a69000ff-8bb6-4631-a068-8c3935489617",
+        "f2f251ed-9e19-4a79-a098-3e594c612b68",
+        "7b5f8e32-dc7b-4a4c-ab8b-b3a0311cf47a"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 5,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v1_A2.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v1_A2.jsonl",
+      "sha256": "969b59fbea7f50b5e049e15999f1d45fb60a6a329ebc2b243e87e0f3af3a60a4",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "606c0bf7-a759-40a8-b6d7-e92db8a1d885",
+        "c347e028-6233-4e83-9fe1-e79cdf12ff4e",
+        "aa23b8d6-4526-4439-8069-0b002db41915",
+        "b947dc70-6f8a-47e1-b18b-0284dd0313ff",
+        "4240389c-c2da-4921-b8bd-a0be5d044e9b"
+      ],
+      "task_successes": 4,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v1_control.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v1_control.jsonl",
+      "sha256": "dddaaa4d65f504c033a4a198065a5621b002e658749fbee9df891f6375a6d051",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "d9bcd02f-fb6d-48bf-9a0d-0148e182a80e",
+        "108ce890-f523-43bb-a2ed-4e04b42f519f",
+        "5145c0f2-c2aa-46ae-b85d-75ac3ad6471a",
+        "c1264a0f-e414-4345-b947-f1da6d7a3121",
+        "af5245da-57a5-4603-a6b9-1719aa53a0b4"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v2_A1.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v2_A1.jsonl",
+      "sha256": "76851ba1c66949859864ad8892e14209dcd2ed2f9689fc985a44a7254a39cee6",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "acd00610-6cda-4231-a4c2-5525902c094a",
+        "4f67b55b-acd2-494b-b223-76ede56db4a6",
+        "12d82434-d732-4fa0-96ef-fc2927d11404",
+        "4ae9e77a-3849-4d8b-aba0-bc0137225ae4",
+        "feaf683b-1752-45a1-bb5d-b6c6c02ddb88"
+      ],
+      "task_successes": 3,
+      "diamond_loss_episodes": 3,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v2_A2.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v2_A2.jsonl",
+      "sha256": "ce2dda8241fe27fdfbad662d7d3c9ed948f217f32657c60195db7e33b90d7aeb",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "41f38d0e-cbcf-4f96-ad03-90b479854868",
+        "06fe47c0-7d22-4fb3-8470-6e8fe8b01bca",
+        "7037acdc-8673-498d-b88c-796f6793c626",
+        "94403df7-c40e-4d43-bc93-625487d12f30",
+        "78235467-8dcf-4726-a8b5-a1c9a64fc3ad"
+      ],
+      "task_successes": 2,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "path": "results/development/dev_D2_v2_control.jsonl",
+      "source": "C:\\Users\\Rayya\\.codex\\worktrees\\8a46\\mc-tool\\runs\\dev_D2_v2_control.jsonl",
+      "sha256": "e1e7c53d13d83b7b503d7b3e546d5c30a37ef9bf388a0a5650ec1ffce8533dec",
+      "raw_records": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "selected_episode_ids": [
+        "5e79e656-e216-4829-928d-149a3608c408",
+        "13542ff9-97f1-464f-873a-692ad04fba27",
+        "9c0e7588-0e0f-4b41-bc89-4e0a3cc6e4fe",
+        "b42755c4-3c46-47de-9476-bb0e0f8c32b8",
+        "8a8587ef-611e-49cd-bc78-fbba4566954e"
+      ],
+      "task_successes": 5,
+      "diamond_loss_episodes": 0,
+      "measured_seeds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    }
+  ]
+}

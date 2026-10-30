@@ -1,0 +1,10 @@
+{
+  "bot_name": "AgentBot",
+  "spawn": null,
+  "chest": null,
+  "sign": null,
+  "logs": [],
+  "target_logs": 10,
+  "starting_diamonds": 5,
+  "cleanup_radius": 32
+}
