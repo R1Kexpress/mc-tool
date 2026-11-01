@@ -1,0 +1,7 @@
+{
+  "timestamp_utc": "2026-10-30T15:44:56.327486+00:00",
+  "cause": "Disconnected AgentBot API retained stale observations; Minecraft list showed zero online players.",
+  "repair": "Restarted original Node bot; confirmed AgentBot online via RCON and API.",
+  "retained_setup_error_episode": "00ebda53-b073-4cf9-b14c-02c6f6b7591c",
+  "completed_before_repair": 25
+}

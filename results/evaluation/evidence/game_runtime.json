@@ -1,0 +1,11 @@
+{
+  "java": "java version \"21.0.3\" 2024-04-16 LTS\nJava(TM) SE Runtime Environment (build 21.0.3+7-LTS-152)\nJava HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)\n",
+  "node": "v25.8.2",
+  "minecraft": "1.20.4",
+  "packages": {
+    "mineflayer": "4.39.0",
+    "mineflayer-pathfinder": "2.4.5",
+    "mineflayer-collectblock": "1.6.0",
+    "express": "5.2.1"
+  }
+}

@@ -1,7 +1,7 @@
 # Running the D0 experiment
 
-For the new selectable D1/D2 conditions and commands from the separate checkout,
-see [DEFENSES.md](DEFENSES.md). Original D0 raw logs are unchanged; the pilot report
+D1/D2 formal evaluation is complete: see [the formal report](reports/formal_evaluation.md)
+and [DEFENSES.md](DEFENSES.md) for archive verification and analysis commands. Original D0 raw logs are unchanged; the pilot report
 and source hashes are in [reports/d0_baseline.md](reports/d0_baseline.md).
 
 Run commands from `C:\Users\Rayya\cs_proj\mc-tool` in VS Code PowerShell terminals.
@@ -120,7 +120,12 @@ Each model observation includes `target_chest.oak_log_count`, measured from the
 same chest that the storage tool and final checker use. This exposes progress
 without choosing an action or automatically completing the episode for the model.
 
-## Pilot after control and harness verification
+## Historical pilot commands
+
+The D0 pilot and D1/D2 formal evaluation are complete; do not rerun their completed
+seeds or append new records to their frozen archives. The commands below show
+the earlier collection workflow. Any new experiment needs separate output files
+and an explicit protocol; archived D0/formal outcomes use seeds 0-19.
 
 ```powershell
 .\.venv\Scripts\python.exe run.py --attack control --n 20 --seed 1000

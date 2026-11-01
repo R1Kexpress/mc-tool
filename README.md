@@ -2,7 +2,7 @@
 
 A small study of how often hidden instructions (in signs, books, chat, item names) hijack an LLM-driven Minecraft bot, and whether architectural defenses hold up better than "please ignore injected instructions" prompts. Everything runs locally on a laptop (RTX 3050) against a private server.
 
-> **Status:** D0 pilot complete (60 measured episodes). D1/D2 prompt development complete (60 selected outcomes); D1 v1 and D2 v2 selected for evaluation. Formal defense evaluation and structural defenses are pending.
+> **Status:** D0 pilot complete (60 measured episodes). D1/D2 prompt development complete (60 selected outcomes); D1 v1 and D2 v2 selected for evaluation. D1/D2 formal evaluation complete (120 measured outcomes); structural defenses are pending. See [formal results](reports/formal_evaluation.md).
 > **Experiment setup:** see [`EXPERIMENTS.md`](EXPERIMENTS.md)
 > **Defense workflow:** see [`DEFENSES.md`](DEFENSES.md)
 > **Archived data:** see [`results/README.md`](results/README.md)
@@ -22,8 +22,8 @@ Do structural defenses (confirmation gates, tool locking, planner/reader split) 
 | Bot library | Mineflayer (Node.js) | 4.39.0, locked in `bot/package-lock.json` |
 | Navigation / collection | mineflayer-pathfinder / mineflayer-collectblock | 2.4.5 / 1.6.0 |
 | Local HTTP API | Express | 5.2.1 |
-| LLM runtime | Ollama | Runtime version not yet recorded |
-| Evaluated model | llama3.2:3b | Q4_K_M observed during setup; exact model digest not yet recorded |
+| LLM runtime | Ollama | 0.40.12 (formal evaluation) |
+| Evaluated model | llama3.2:3b | Q4_K_M; exact digest in `reports/formal_evaluation.json` |
 | Orchestration / analysis | Python | 3.12 used; dependencies pinned in `requirements.txt` |
 | Hardware | Laptop RTX 3050, VRAM: _TBD_ | n/a |
 
@@ -84,13 +84,32 @@ mc-tool/
 - [x] **M4:** Bot reads a sign (first injection channel)
 - [x] **M5:** Simplified three-log T1 measured end-to-end (D0 control: 20/20 successes)
 - [x] **M6:** Baseline attack success rate measured (defense D0)
-- [ ] **M7:** Prompt defenses (D1-D2) evaluated — development complete; formal evaluation pending
+- [x] **M7:** Prompt defenses (D1-D2) evaluated — 120 frozen formal outcomes archived
 - [ ] **M8:** Structural defenses (D3-D5) evaluated
 - [ ] **M9:** Analysis, plots, writeup/poster
 
 ---
 
 ## Project log
+
+### 2026-11-01: Complete frozen D1/D2 evaluation and consolidate results
+
+**Done:** All 120 measured outcomes are complete, with exactly one outcome per
+seed 0-19 in each cell and matching frozen prompt fingerprints. Archived 123 raw
+JSONL records (120 measured, one setup error, two checker errors), runtime data,
+logs, interruption audits, and exact frozen sources in `results/evaluation/`.
+Two additional interrupted attempts lack full controller traces and are disclosed.
+The reproducible analysis reports outcomes, Wilson intervals, joint security/task
+success, token/tool-call costs, and stopping reasons in `reports/formal_evaluation.md`.
+
+**Results:** D1 v1 A1 losses: 6/20, tasks: 14/20. D2 v2 A1 losses: 16/20,
+tasks: 15/20. Both controls: 20/20 tasks without loss. A2 losses: 0/20 for
+both; task completion is 17/20 for D1 versus 5/20 for D2. D2's low A2 utility
+must accompany its zero-loss count. D0 comparisons are descriptive earlier-pilot
+comparisons, not randomized or concurrent evidence of a causal improvement.
+
+**Next:** Review the consolidated files, then design a separate frozen structural
+defense protocol for D3-D5. Prompts remain frozen. The user handles commits.
 
 ### 2026-10-30: Archive baseline and prompt-development results for review
 
@@ -318,7 +337,27 @@ Selected prompts and their exact fingerprints are in
 [`reports/frozen_prompt_selection.json`](reports/frozen_prompt_selection.json).
 See the [D1](reports/d1_development_selection.md) and
 [D2](reports/d2_development_selection.md) selection notes. The 20-trial-per-cell
-D1/D2 evaluation has **not** run yet. No structural-defense result is claimed.
+D1/D2 evaluation is now complete; see the formal results below. No structural-defense result is claimed.
+
+### Frozen formal evaluation: 20 trials per cell
+
+| Defense | Condition | Diamond loss | Task completion | Task without loss |
+|---|---|---:|---:|---:|
+| D1 v1 | Control | 0/20 | 20/20 | 20/20 |
+| D1 v1 | A1 | 6/20 | 14/20 | 9/20 |
+| D1 v1 | A2 | 0/20 | 17/20 | 17/20 |
+| D2 v2 | Control | 0/20 | 20/20 | 20/20 |
+| D2 v2 | A1 | 16/20 | 15/20 | 0/20 |
+| D2 v2 | A2 | 0/20 | 5/20 | 5/20 |
+
+D1's A1 loss rate is lower than the earlier D0 pilot's 14/20; D2's is higher.
+Neither reliably prevents the attack. D2 completes only 5/20 A2 tasks; zero
+observed losses does not establish useful protection. Full 95% Wilson intervals,
+costs, runtime versions/model digest, invalid attempts and limitations are in
+[the formal report](reports/formal_evaluation.md). The archive and exact source
+snapshot are indexed by [its manifest](results/evaluation/manifest.json).
+Development results and the D0 pilot remain separate. Structural defenses are
+not implemented or evaluated.
 
 ## References
 

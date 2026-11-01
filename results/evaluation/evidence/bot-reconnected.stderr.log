@@ -1,0 +1,11 @@
+Mining error: Error: Digging aborted
+    at bot.stopDigging (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\mineflayer\lib\plugins\digging.js:189:26)
+    at C:\Users\Rayya\cs_proj\mc-tool\bot\bot.js:197:33
+    at Layer.handleRequest (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\index.js:582:12)
+    at next (C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules\router\index.js:291:5)

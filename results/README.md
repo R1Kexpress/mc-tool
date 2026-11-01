@@ -45,3 +45,24 @@ foreach ($file in (Get-Content results/manifest.json -Raw | ConvertFrom-Json).fi
     }
 }
 ```
+
+
+## Formal evaluation archive — November 1, 2026
+
+`evaluation/` is a separate snapshot with its own `manifest.json`; the October 30
+D0/development manifest above is unchanged. The six raw files contain 123 records:
+120 measured outcomes (20 per D1 v1/D2 v2 × control/A1/A2 cell), one setup error
+and two checker errors. Every cell has exactly one completed outcome per seed
+0-19. No completed outcome was discarded or duplicated.
+
+`evaluation/evidence/` preserves runtime data, console/service logs and the
+pause/stop/recovery audit trail. Two extra user-interrupted attempts lack outcome
+JSONL records/full traces and are disclosed in the formal report.
+`evaluation/source_snapshot/` preserves every file hashed by the frozen plan,
+including the original Node lockfile. Credentials, server properties, operator
+lists and the Minecraft world are excluded from this archive.
+
+Regenerate `reports/formal_evaluation.md` and `.json` and verify every archive
+checksum with `scripts/analyze_evaluation.py` from the repository root. See
+`DEFENSES.md` for the explicit PowerShell terminal/Python command. Do not pool
+these 120 evaluation outcomes with the separate D0 pilot or development data.

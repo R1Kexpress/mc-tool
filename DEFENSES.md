@@ -1,7 +1,8 @@
-# D1 and D2 development
+# D1/D2 defense workflow
 
-Implementation lives in this checkout:
-`C:\Users\Rayya\.codex\worktrees\8a46\mc-tool`.
+Canonical review/runtime checkout: `C:\Users\Rayya\cs_proj\mc-tool`.
+Development ran in 8a46; the completed formal evaluation ran in f029.
+Those source locations remain intact for provenance.
 The original Minecraft server, Node bot, Python environment, arena configuration,
 and D0 logs remain in `C:\Users\Rayya\cs_proj\mc-tool`.
 No Node changes or new packages are needed for the prompt defenses.
@@ -82,7 +83,7 @@ labels records; it does not automatically freeze prompts or prevent rerunning
 seeds. Check uniqueness and fingerprints before summarizing a file.
 
 Development is complete as of 30 October 2026: D1 v1 and D2 v2 are selected by
-the stated rule. Formal defense evaluation has not run. Current result summaries,
+the stated rule. Formal evaluation completed November 1: 120 measured outcomes; see `reports/formal_evaluation.md`. Current result summaries,
 archived raw data, and frozen prompts are linked from the root README. Automated tests
 check prompt equivalence, D2 text preservation and delimiter handling, unchanged
 tool availability, metadata propagation, and the existing reset/runner behavior.
@@ -93,3 +94,38 @@ or actions. A silent-looking initial turn can be a model generating several tool
 calls; those calls are rejected by the existing one-call protocol, not executed.
 An interrupted episode is retained separately. If rerunning it, first check that
 the seed does not already have a completed outcome in the file.
+
+
+## Completed evaluation archive and reproduction
+
+The evaluation is closed: D1 v1 and D2 v2 each have 20 measured outcomes for
+control/A1/A2, seeds 0-19. `results/evaluation/manifest.json` indexes raw data,
+runtime evidence, pause/stop/recovery audits, and a byte-exact frozen source
+snapshot. Three invalid JSONL attempts and two additional unmeasured interrupted
+attempts are disclosed in the report. Never rerun completed evaluation seeds or
+retune these prompts using their evaluation outcomes.
+
+In a PowerShell terminal at `C:\Users\Rayya\cs_proj\mc-tool`, regenerate the
+report and validate archived checksums without Minecraft or Ollama:
+
+```powershell
+$experimentPython = 'C:\Users\Rayya\cs_proj\mc-tool\.venv\Scripts\python.exe'
+& $experimentPython -B scripts/analyze_evaluation.py
+```
+
+`scripts/formal_evaluation.py` and its regression tests are preserved from f029.
+The driver validated settings, fingerprints, source hashes and unique completed
+seeds on resume, skipped measured failures as well as successes, and stopped on
+infrastructure/checker failures. Its original plan is `reports/formal_evaluation_plan.json`.
+The source snapshot includes the original package lockfile; local edits to the
+main-checkout lockfile were preserved. The historical plan's source guard may
+therefore reject a run from main. Keep that guard intact: this experiment is
+finished, and any future defense study needs its own plan/output files.
+
+Historical pause metadata in the archive describes earlier pauses, not current
+state. The final console log records completion; the completion monitor was removed.
+The original f029 live logs remain unchanged. No agent-created commit was made.
+
+For Node tests in a checkout without installed packages, set
+`$env:NODE_PATH = 'C:\Users\Rayya\cs_proj\mc-tool\bot\node_modules'`
+in that test terminal before `node --test bot/episodes.test.js`.

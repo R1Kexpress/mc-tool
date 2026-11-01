@@ -1,9 +1,15 @@
 # Prompt Injection in a Minecraft Agent: Do Structural Defenses Beat Prompting?
 
-> **Status:** Draft v0.1  
+> **Status:** Original design draft v0.1; progress update November 1, 2026.
 > **Author:** *Rayyan Madraswala (Assisted by Claude)* **Setting:** Independent research project (COMP560 / dnuLab), local-only, small budget
 
 ---
+
+D0 pilot (60 measured outcomes), D1/D2 development (60 selected outcomes), and
+frozen D1/D2 evaluation (120 outcomes) are complete. See
+[the formal report](reports/formal_evaluation.md) for results and limitations.
+The broader tasks/channels/model comparisons below remain planned scope;
+structural defenses D3-D5 are the next implementation phase.
 
 ## 1. One-paragraph summary
 
@@ -234,7 +240,7 @@ mc-injection/
 | Results too noisy                                                                          | More trials per cell; fewer conditions; report CIs                                      |
 | Model too slow on 3050                                                                     | Smaller/quantized model; shorter episodes; run batches overnight                        |
 | Mineflayer/server version mismatch                                                         | Pin versions early and record them in the README                                        |
-| Defenses implemented unfairly (strawman prompts)                                           | Write several prompt variants for D1/D2 and report the best                             |
+| Defenses implemented unfairly (strawman prompts)                                           | Compare variants on development data using a stated rule; freeze before evaluation and report every variant tried                             |
 | Overfitting attacks to defenses                                                            | Keep a held-out set of attack payloads not used while tuning defenses                   |
 | Novelty concern (existing benchmarks like AgentDojo)                                       | Frame contribution as a controlled **environment + defense comparison**, not a new idea |
 

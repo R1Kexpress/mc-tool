@@ -1,0 +1,53 @@
+{
+  "paused_at_utc": "2026-10-30T05:25:13.902805+00:00",
+  "reason": "User requested pause until morning.",
+  "completed_counts": {
+    "eval_D1_v1_A1.jsonl": {
+      "completed": 5,
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "eval_D1_v1_control.jsonl": {
+      "completed": 20,
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  "interrupted_attempt": {
+    "defense": "D1",
+    "variant": "v1",
+    "attack": "A1",
+    "seed": 5,
+    "episode_id": "67566f24-b1a6-43a4-9305-d61000a49432",
+    "status": "interrupted_unmeasured",
+    "note": "Console interrupt terminated the runner without a JSONL record for this attempt. Partial progress remains in runner.log; no measured outcome or full controller trace was recovered. Retain this audit and rerun seed 5 on resume."
+  },
+  "runner_stopped": true,
+  "bot_paused": true,
+  "completion_monitor": "PAUSED"
+}

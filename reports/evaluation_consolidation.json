@@ -1,0 +1,224 @@
+{
+  "date": "2026-11-01",
+  "source_checkout": "C:\\Users\\Rayya\\.codex\\worktrees\\6239\\mc-tool",
+  "evaluation_origin": "C:\\Users\\Rayya\\.codex\\worktrees\\f029\\mc-tool",
+  "destination": "C:\\Users\\Rayya\\cs_proj\\mc-tool",
+  "branch": "main",
+  "copied_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "bb3cc83c7ac8ff251c6c6ce2c6ae112baf44641d1bddb152ab6ca4b34f5b093e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "faac691d9b73c33750eb6f5c5dcf5017befb2a7f2e6aa3c7b849e63c632bca4d"
+    },
+    {
+      "path": "DEFENSES.md",
+      "sha256": "a85b1445e576ae84353d5e4b941da1ab7274d3b09f47456ec85f6258ce5b8897"
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "fb94c2f0d1923d02e67c9302275dd979a72f1635d69812e40a84a1ce67a17fec"
+    },
+    {
+      "path": "reports/formal_evaluation.json",
+      "sha256": "4923a2a200bd4fec063d3cf02d770078f27c05dc80f6690942443d4c02cc647b"
+    },
+    {
+      "path": "reports/formal_evaluation.md",
+      "sha256": "1c26ffb0a95f258c117ceabb8df6ae355caf5720b5d296f4bcccd52eaa797fbd"
+    },
+    {
+      "path": "reports/formal_evaluation_plan.json",
+      "sha256": "4c5ada9c2f1aea12386b0742d391ced17921c0240b3d945bdc7a1f12f9ed6e2a"
+    },
+    {
+      "path": "scripts/formal_evaluation.py",
+      "sha256": "a67c04a8b85dc1363e8701e721514da0043e1c1370d540498bd844e00f2ece05"
+    },
+    {
+      "path": "scripts/analyze_evaluation.py",
+      "sha256": "78c7d751b928bc238002d5f917bf00e671120c21e495a9c5575d2df03abf0245"
+    },
+    {
+      "path": "tests/test_formal_evaluation.py",
+      "sha256": "b939335f3c2b5cf456f1b17fe7d76d31d7c19908376958a981fd23755d96574a"
+    },
+    {
+      "path": "tests/test_evaluation_analysis.py",
+      "sha256": "caddbd53f418cb4b13bca47712b096fe35004f249827206132291d415559e9d9"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-20261031.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-20261031.stdout.log",
+      "sha256": "b3b5771ff32a917795c77cbe42b2a7d16a36a764c4a1fa5ba93fc6c11e30df8f"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-20261101.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-20261101.stdout.log",
+      "sha256": "e64916b5f87b4b63e4bb1d9ba91c8e2a157dec980a31752ce1d409d9217f1dfb"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-reconnected.stderr.log",
+      "sha256": "d11aca00bc803b21174325996a918cc1a66eca729070c9826a2f92c8989ef067"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-reconnected.stdout.log",
+      "sha256": "84a83738a14af190edfd2d8f743ebf731df6390d1f797078c1fe832a7a25aa8e"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-resume2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/evaluation/evidence/bot-resume2.stdout.log",
+      "sha256": "1691753fcdf201e4119c5ce59f78ea2fda9452818aaa9ccce1fbffe5e3606424"
+    },
+    {
+      "path": "results/evaluation/evidence/bot.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/evaluation/evidence/bot.stdout.log",
+      "sha256": "b4250a6397ef48da2e618e03c5281688c6141c7218b3602dcd0028d702e00bc9"
+    },
+    {
+      "path": "results/evaluation/evidence/game_runtime.json",
+      "sha256": "e15d6abc7aef574996e1db71ab3798d0b4153b1040e3d6a21a1a6a65786910c4"
+    },
+    {
+      "path": "results/evaluation/evidence/minecraft.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/evaluation/evidence/minecraft.stdout.log",
+      "sha256": "8190787f828c8c1d0234de1ff344d5a14e6e3e4223fc39c41b390ead2e402377"
+    },
+    {
+      "path": "results/evaluation/evidence/pause.json",
+      "sha256": "95c78c1da3820a1b42bbccc25b4841596e4fce54b97e53d4ddadd39ef583866e"
+    },
+    {
+      "path": "results/evaluation/evidence/reconnection.json",
+      "sha256": "8ecd03dead033644b5a466c3795719122cf06e13c4d1cfe4254da1ff909a1189"
+    },
+    {
+      "path": "results/evaluation/evidence/recovery_events.jsonl",
+      "sha256": "9b9776fc0f0d75c9d380ffaf00023f4ad3277afaa7c05c818459d908a57eb666"
+    },
+    {
+      "path": "results/evaluation/evidence/runner-resumed.log",
+      "sha256": "bcc613f53b09e204a348548cabba11edbce6a9fd98bf9bd14bf0fd936dc3aa39"
+    },
+    {
+      "path": "results/evaluation/evidence/runner.log",
+      "sha256": "a52632cc5e2b963cef08922c585f04dc791207b7b480d115759b64a2b6ac02c4"
+    },
+    {
+      "path": "results/evaluation/evidence/runtime.json",
+      "sha256": "13e0df062964debc36148be5bda7f0c88adfdd2f28ae5f04b567c54c096a6c13"
+    },
+    {
+      "path": "results/evaluation/evidence/stop_events.jsonl",
+      "sha256": "00c4301cf525dedfede9dc12c40d9c019aa8a5e0b061c504ef661d64674bdb7d"
+    },
+    {
+      "path": "results/evaluation/formal_evaluation_plan.json",
+      "sha256": "4c5ada9c2f1aea12386b0742d391ced17921c0240b3d945bdc7a1f12f9ed6e2a"
+    },
+    {
+      "path": "results/evaluation/manifest.json",
+      "sha256": "49e5f592a2085b925f359f2c1b4468879f439e65e9ecb23b0358eac87530f41a"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D1_v1_A1.jsonl",
+      "sha256": "64950799d0711bfd49c17bc2570e64676838edf745e44b051b2065c92b6d7914"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D1_v1_A2.jsonl",
+      "sha256": "04c1a495d4a2ff1b068e881f376a9b11e5e425de0f3f5b57313e14afa1334137"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D1_v1_control.jsonl",
+      "sha256": "3d58f9518face6dec2178eb6bcdb4b0d626c9b6569bb09a8d60d7898376ee5cd"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D2_v2_A1.jsonl",
+      "sha256": "a047b3e716d08f8b8fe8ca7b0b90b9161a2d3fea8749a2966c0c8d022cc2779e"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D2_v2_A2.jsonl",
+      "sha256": "6438a0256da213659954245edaad9b8c4e322294d88b7af70b048928eaecb20f"
+    },
+    {
+      "path": "results/evaluation/raw/eval_D2_v2_control.jsonl",
+      "sha256": "ffd865693e740e541a0bfd88739c801abe33f82ab5e2f4f3b994195711762b4e"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/agent/config.py",
+      "sha256": "1f8a87073e94f218947e2ce49fccb4e89cb7cbc8f7d2b349371ca21afa4e4eb4"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/agent/controller.py",
+      "sha256": "b56edb9653b22184cf382af0a21a8e1d96daae0c266e1bed29e020d02af54e64"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/agent/defenses.py",
+      "sha256": "d2ff5f217d0adc0fb56fc2f1360b827a71caf2748f85ad6a0b63d7ffddc5f39c"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/agent/tools.py",
+      "sha256": "f37f9e846a486c4b777263371faa23a2bda8d0127ed6a82960a6a81dc3f5af59"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/agent/world.py",
+      "sha256": "02c48d2159c46e0e68285a48b3467380d958552575e885973687400940e5c8c3"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/bot/bot.js",
+      "sha256": "d80aeb225d3ed16e531b2769abea7d6e0e284d920aa7e9600840afbd657f1b75"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/bot/episodes.js",
+      "sha256": "1745313eb25e95b8cb6bd65d4f58d0d038deeba1ff15cd3ee9bc1a8f434febac"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/bot/package-lock.json",
+      "sha256": "40005d315377b551cb6282287d4f78d8d2361c933cbfa1b9a762cda4b5755739"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/bot/task-chest.js",
+      "sha256": "614d54f6851e26c7cae91a9142784af09463cbac052c91e7904c3dd8ef1a95df"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/bot/tool-arguments.js",
+      "sha256": "cb97ae057dd9774de7791a675c353084bdb253bd41dbc6d45915cfcf6359ea6f"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/reports/frozen_prompt_selection.json",
+      "sha256": "6212357cc0ee0da18e23d526b0aca3707aa39e579f4234ba1102de1876db4ed1"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/run.py",
+      "sha256": "276a564eb184cdf01034f1728ce5b3d4ace3e4e69508f5624949b166c6bee87e"
+    },
+    {
+      "path": "results/evaluation/source_snapshot/scripts/formal_evaluation.py",
+      "sha256": "a67c04a8b85dc1363e8701e721514da0043e1c1370d540498bd844e00f2ece05"
+    }
+  ],
+  "protected_local_files_untouched": [
+    "bot/package-lock.json",
+    "mc_server/server.properties"
+  ],
+  "backup_directory": "C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\consolidation_backup_20261101",
+  "commits_created": false,
+  "note": "Original f029 data and code left intact. Completed raw results and audit logs are archived under results/evaluation, not pooled with D0 or development."
+}
