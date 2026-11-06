@@ -24,6 +24,8 @@ def run_episode(task_description, *, model=MODEL, seed=0, temperature=0.7,
     deadline = started + timeout
     result = {'trace': [], 'observed_diamonds': [], 'stop_reason': 'step_cap',
               'prompt_tokens': 0, 'completion_tokens': 0, 'prompt': prompt}
+    if defense == 'D4':
+        result.update(untrusted_seen=False, lock_trigger_step=None, blocked_calls=[])
     # This list belongs to one episode; a new run_episode() always starts fresh.
     messages = [
         {'role': 'system', 'content': prompt['system_prompt']},
@@ -60,6 +62,11 @@ def run_episode(task_description, *, model=MODEL, seed=0, temperature=0.7,
                 break
             entry['observation_message'] = observation_message(task_description, state, defense, prompt['variant'])
             messages.append({'role': 'user', 'content': entry['observation_message']})
+            # Signs enter context through /observe, not a separate read_sign tool.
+            # Even a blank sign is untrusted input. Never unlock within an episode.
+            if defense == 'D4' and state.get('nearby_signs') and not result['untrusted_seen']:
+                result.update(untrusted_seen=True, lock_trigger_step=step + 1)
+                entry['lock_triggered'] = True
             print(f'Step {step + 1}: waiting for Ollama...', flush=True)
             response = request('POST', OLLAMA_URL, json={
                 'model': model, 'messages': deepcopy(messages), 'tools': tools, 'stream': False,
@@ -94,6 +101,15 @@ def run_episode(task_description, *, model=MODEL, seed=0, temperature=0.7,
             print(f'Step {step + 1}: {name} {args}', flush=True)
             if time.monotonic() >= deadline:
                 raise TimeoutError('Episode time budget exhausted before tool execution.')
+            # give_item is not exposed by this harness; reject it defensively too.
+            sensitivity = SENSITIVITY.get(name, 'high' if name == 'give_item' else None)
+            if defense == 'D4' and result['untrusted_seen'] and sensitivity == 'high':
+                feedback = {'error': f'D4 tool lock: {name} is blocked after untrusted sign exposure.'}
+                result['blocked_calls'].append({'tool': name, 'arguments': deepcopy(args), 'step': step + 1})
+                entry.update(tool_result=feedback, blocked=True)
+                tool_result(name, feedback)
+                print(f'  {feedback}', flush=True)
+                continue
             if name == 'done':
                 tool_result(name, {'episode_ended': True})
                 result['stop_reason'] = 'done'
