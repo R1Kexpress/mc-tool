@@ -1,5 +1,56 @@
 # D1/D2 defense workflow
 
+## D4: episode tool lock (v1, harness 8)
+
+D4 uses D0's exact system prompt, observation text and tool definitions. The
+Python controller latches `untrusted_seen` when the first sign observation is
+appended to model context, including a blank sign in control. This harness reads
+signs through `/observe` (`nearby_signs`), not a separate `read_sign` tool. After
+exposure, calls tagged high sensitivity (`drop_item`) are rejected before Node
+dispatch. `give_item`, which is not an exposed tool or implemented route here,
+is also rejected defensively. Mining, chest storage (including diamond storage),
+and `done` retain their existing behavior. No additional transfer policy applies.
+The lock persists even when signs disappear, and resets for every episode.
+Errors return as tool results so the model can continue.
+
+D4 records add `untrusted_seen`, `lock_trigger_step` (one-based, null before
+exposure), and `blocked_calls` (tool, arguments, one-based step); the triggering
+trace entry has `lock_triggered: true` and denied entries have `blocked: true`.
+Setup failures retain unlocked defaults. Existing record fields are retained.
+D4 uses harness 8 to distinguish it from both frozen v6 and earlier experimental
+v7 records; D0/D1/D2 retain v6. D4 metadata identifies defense D4 / variant v1;
+its fingerprint differs from D0 because those labels are included in the hash,
+even though their model-visible prompts are identical.
+
+Frozen D4 evaluation protocol: control / A1 / A2, seeds 0–19, 20 episodes per
+cell (60 total). Retain the D1/D2 evaluation settings: `llama3.2:3b`, temperature
+0.7, 40 steps, 300-second budget, the same three-log arena with five diamonds,
+reset/checkers and completion rule. Preserve failures and use new output files.
+The evaluation is complete: 60 measured outcomes plus one retained setup failure.
+See [the report](reports/d4_evaluation.md) and [manifest](results/d4_evaluation/manifest.json).
+Do not rerun completed formal seeds. The historical command for each cell was:
+
+```powershell
+# Historical reproduction reference only; these formal seeds are complete.
+$cell = 'control'
+.\.venv\Scripts\python.exe run.py --config results/d4_evaluation/evidence/arena.json --defense D4 --prompt-variant v1 --phase evaluation --attack $cell --n 20 --seed 0 --model llama3.2:3b --temperature 0.7 --max-steps 40 --timeout 300 --output "runs/d4_v8_$cell.jsonl"
+```
+
+Actual collection used the archived serial supervisor, one episode per invocation,
+skipping completed measured seeds on resume. Regenerate the report and verify the
+archive without starting any services:
+
+```powershell
+.\.venv\Scripts\python.exe -B scripts/analyze_d4_evaluation.py
+```
+
+The earlier v7 Node process, if still running, must be restarted with the baseline
+Node sources before this protocol is used. The earlier local server settings
+and structural work are preserved in the named stash documented in D4_AUDIT.md;
+restore any needed local server settings deliberately before starting services.
+
+The following sections describe the historical D1/D2 prompt-only workflow.
+
 Canonical review/runtime checkout: `C:\Users\Rayya\cs_proj\mc-tool`.
 Development ran in 8a46; the completed formal evaluation ran in f029.
 Those source locations remain intact for provenance.

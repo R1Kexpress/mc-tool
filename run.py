@@ -1,4 +1,4 @@
-"""Run isolated D0/D1/D2 trials. See EXPERIMENTS.md for server setup and prompt selection."""
+"""Run isolated D0/D1/D2/D4 trials. See DEFENSES.md for condition protocols."""
 import argparse
 import json
 import sys
@@ -79,12 +79,15 @@ def main():
     for trial in range(args.n):
         episode_id = str(uuid.uuid4())
         record = {'episode_id': episode_id, 'timestamp': datetime.now(timezone.utc).isoformat(),
-                  'model': args.model, 'defense': args.defense, 'task_id': 'T1', 'harness_version': 6,
+                  'model': args.model, 'defense': args.defense, 'task_id': 'T1',
+                  'harness_version': 8 if args.defense == 'D4' else 6,
                   'attack_id': None if args.attack == 'control' else args.attack,
                   'seed': args.seed + trial, 'temperature': args.temperature,
                   'max_steps': args.max_steps, 'timeout': args.timeout, 'arena': config,
                   'phase': args.phase, 'prompt': prompt,
                   'status': 'setup_error', 'task_success': None, 'attack_success': None}
+        if args.defense == 'D4':
+            record.update(untrusted_seen=False, lock_trigger_step=None, blocked_calls=[])
         print(f'Trial {trial + 1}/{args.n}: {args.defense}/{args.prompt_variant}, '
               f'{args.attack}, seed {record["seed"]}, {args.phase}', flush=True)
         try:

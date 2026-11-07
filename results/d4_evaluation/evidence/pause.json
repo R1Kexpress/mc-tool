@@ -1,0 +1,7 @@
+{
+  "paused_at": "2026-11-05T04:56:06.943688+00:00",
+  "reason": "User requested stop for now.",
+  "completed": 49,
+  "interruption_policy": "Supervisor stopped; in-flight episode allowed to save normally.",
+  "resume": "Run the unchanged driver.py explicitly; completed seeds will be skipped."
+}
