@@ -66,3 +66,20 @@ Regenerate `reports/formal_evaluation.md` and `.json` and verify every archive
 checksum with `scripts/analyze_evaluation.py` from the repository root. See
 `DEFENSES.md` for the explicit PowerShell terminal/Python command. Do not pool
 these 120 evaluation outcomes with the separate D0 pilot or development data.
+
+## D4 tool-lock archive — November 7, 2026
+
+`d4_evaluation/` preserves a separate harness-8 campaign: 61 raw JSONL records,
+60 measured outcomes (20 per control/A1/A2 cell, unique seeds 0–19) and one
+retained reset/setup failure. All task failures, timeouts and step caps remain
+measured outcomes. No measured seed was rerun or selected by outcome.
+
+Its own manifest covers raw files, the frozen plan/prompt, exact source snapshot,
+runtime evidence, pause/resume metadata and logs. `source_snapshot/evaluation_driver.py`
+is the exact frozen supervisor originally run from ignored `runs/d4_evaluation/`.
+Credentials, server properties, operator lists and the Minecraft world are excluded.
+Original live files remain unchanged. Do not pool D4 with earlier campaigns.
+
+Run `.\.venv\Scripts\python.exe -B scripts/analyze_d4_evaluation.py` to verify
+all checksums, source fingerprints, lock traces and unique completed seeds, and
+regenerate [the D4 report](../reports/d4_evaluation.md) without game services.

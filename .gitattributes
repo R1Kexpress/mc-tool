@@ -1,2 +1,3 @@
 # Preserve archived bytes so checksums survive Git checkout on any platform.
 results/evaluation/** -text
+results/d4_evaluation/** -text

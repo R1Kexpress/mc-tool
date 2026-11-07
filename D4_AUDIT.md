@@ -147,3 +147,21 @@ state; `console.log`, `errors.log` and per-cell JSONL files preserve evidence.
 The supervisor requests system/display wakefulness while running and releases
 it on exit. It leaves the bot paused after measured episodes. This launch entry
 does not assert campaign completion; consult the live progress record.
+
+## Completion and merge preparation (November 7, 2026)
+
+All 60 measured outcomes are complete, with one unique outcome per seed 0–19
+in control/A1/A2. Task successes were 14/20, 8/20 and 9/20 respectively; all
+cells had zero diamond losses. A1 recorded 475 rejected drop calls. All 29 task
+failures remain included. One disconnected-session setup error at A2 seed 9
+was retained separately; a fresh baseline bot restored reset verification.
+No measured seed was repeated. Collection ended with the bot paused and the
+progress heartbeat removed.
+
+The user committed and pushed implementation commit `7bf84e0`, then authorized
+archiving the results, updating the project summaries and merging D4 into main.
+This supersedes the initial no-commit/no-merge instructions for this final update.
+New `results/d4_evaluation/` and `reports/d4_evaluation.*` preserve and analyze
+the completed campaign. Existing D0/D1/D2 archives, prompt selection, tools,
+reset/checker logic and historical source snapshots remain unchanged. Earlier
+untracked structural reports and the preserved stash are excluded from the merge.

@@ -1,0 +1,9 @@
+Error: Batch stopped. See the last JSONL record for the setup/checker error.
+Traceback (most recent call last):
+  File "C:\Users\Rayya\cs_proj\mc-tool\runs\d4_evaluation\driver.py", line 204, in <module>
+    main()
+  File "C:\Users\Rayya\cs_proj\mc-tool\runs\d4_evaluation\driver.py", line 185, in main
+    subprocess.run(command, cwd=ROOT, check=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Rayya\\cs_proj\\mc-tool\\.venv\\Scripts\\python.exe', '-u', 'C:\\Users\\Rayya\\cs_proj\\mc-tool\\run.py', '--config', 'C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\d4_evaluation\\arena.json', '--defense', 'D4', '--prompt-variant', 'v1', '--phase', 'evaluation', '--attack', 'A2', '--n', '1', '--seed', '9', '--model', 'llama3.2:3b', '--temperature', '0.7', '--max-steps', '40', '--timeout', '300', '--output', 'C:\\Users\\Rayya\\cs_proj\\mc-tool\\runs\\d4_evaluation\\eval_D4_v1_A2.jsonl']' returned non-zero exit status 1.

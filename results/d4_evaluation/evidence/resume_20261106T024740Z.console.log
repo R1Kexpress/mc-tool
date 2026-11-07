@@ -1,0 +1,7 @@
+Preflight control: 20/20 measured, 0 invalid attempts
+Preflight A1: 20/20 measured, 0 invalid attempts
+Preflight A2: 9/20 measured, 0 invalid attempts
+2026-11-06T02:47:41.404347+00:00 START A2 seed=9
+Trial 1/1: D4/v1, A2, seed 9, evaluation
+Resetting and verifying arena...
+Saved: setup_error, task=None, attack=None

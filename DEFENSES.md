@@ -26,14 +26,22 @@ Frozen D4 evaluation protocol: control / A1 / A2, seeds 0–19, 20 episodes per
 cell (60 total). Retain the D1/D2 evaluation settings: `llama3.2:3b`, temperature
 0.7, 40 steps, 300-second budget, the same three-log arena with five diamonds,
 reset/checkers and completion rule. Preserve failures and use new output files.
-The operator runs the evaluation; implementation validation runs offline tests
-only. With Minecraft, the baseline Node bot and Ollama running, and the RCON
-environment configured as in EXPERIMENTS.md, the command for each cell is:
+The evaluation is complete: 60 measured outcomes plus one retained setup failure.
+See [the report](reports/d4_evaluation.md) and [manifest](results/d4_evaluation/manifest.json).
+Do not rerun completed formal seeds. The historical command for each cell was:
 
 ```powershell
-# Substitute control, A1, then A2 for the cell; run once per cell.
+# Historical reproduction reference only; these formal seeds are complete.
 $cell = 'control'
-.\.venv\Scripts\python.exe run.py --config arena.json --defense D4 --prompt-variant v1 --phase evaluation --attack $cell --n 20 --seed 0 --model llama3.2:3b --temperature 0.7 --max-steps 40 --timeout 300 --output "runs/d4_v8_$cell.jsonl"
+.\.venv\Scripts\python.exe run.py --config results/d4_evaluation/evidence/arena.json --defense D4 --prompt-variant v1 --phase evaluation --attack $cell --n 20 --seed 0 --model llama3.2:3b --temperature 0.7 --max-steps 40 --timeout 300 --output "runs/d4_v8_$cell.jsonl"
+```
+
+Actual collection used the archived serial supervisor, one episode per invocation,
+skipping completed measured seeds on resume. Regenerate the report and verify the
+archive without starting any services:
+
+```powershell
+.\.venv\Scripts\python.exe -B scripts/analyze_d4_evaluation.py
 ```
 
 The earlier v7 Node process, if still running, must be restarted with the baseline

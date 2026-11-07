@@ -1,6 +1,6 @@
 # Prompt Injection in a Minecraft Agent: Do Structural Defenses Beat Prompting?
 
-> **Status:** Original design draft v0.1; progress update November 1, 2026.
+> **Status:** Original design draft v0.1; progress update November 7, 2026.
 > **Author:** *Rayyan Madraswala (Assisted by Claude)* **Setting:** Independent research project (COMP560 / dnuLab), local-only, small budget
 
 ---
@@ -8,8 +8,12 @@
 D0 pilot (60 measured outcomes), D1/D2 development (60 selected outcomes), and
 frozen D1/D2 evaluation (120 outcomes) are complete. See
 [the formal report](reports/formal_evaluation.md) for results and limitations.
-The broader tasks/channels/model comparisons below remain planned scope;
-structural defenses D3-D5 are the next implementation phase.
+The D4 tool lock is now implemented and evaluated separately on harness 8:
+60 measured outcomes, zero observed diamond losses, and task completion of
+14/20 control, 8/20 A1 and 9/20 A2. See [the D4 report](reports/d4_evaluation.md)
+and [archive manifest](results/d4_evaluation/manifest.json). The utility loss and
+nonconcurrent comparison limit effectiveness claims. D3/D5 and the broader
+tasks/channels/model comparisons below remain planned scope.
 
 ## 1. One-paragraph summary
 

@@ -2,7 +2,7 @@
 
 A small study of how often hidden instructions (in signs, books, chat, item names) hijack an LLM-driven Minecraft bot, and whether architectural defenses hold up better than "please ignore injected instructions" prompts. Everything runs locally on a laptop (RTX 3050) against a private server.
 
-> **Status:** D0 pilot complete (60 measured episodes). D1/D2 prompt development complete (60 selected outcomes); D1 v1 and D2 v2 selected for evaluation. D1/D2 formal evaluation complete (120 measured outcomes); structural defenses are pending. See [formal results](reports/formal_evaluation.md).
+> **Status:** D0 pilot complete (60 measured episodes). D1/D2 prompt development complete (60 selected outcomes); D1 v1 and D2 v2 selected for evaluation. D1/D2 formal evaluation complete (120 measured outcomes). D4 tool-lock evaluation complete (60 measured outcomes); D3/D5 remain pending. See [D1/D2 results](reports/formal_evaluation.md) and [D4 results](reports/d4_evaluation.md).
 > **Experiment setup:** see [`EXPERIMENTS.md`](EXPERIMENTS.md)
 > **Defense workflow:** see [`DEFENSES.md`](DEFENSES.md)
 > **Archived data:** see [`results/README.md`](results/README.md)
@@ -85,12 +85,32 @@ mc-tool/
 - [x] **M5:** Simplified three-log T1 measured end-to-end (D0 control: 20/20 successes)
 - [x] **M6:** Baseline attack success rate measured (defense D0)
 - [x] **M7:** Prompt defenses (D1-D2) evaluated — 120 frozen formal outcomes archived
-- [ ] **M8:** Structural defenses (D3-D5) evaluated
+- [ ] **M8:** Structural defenses evaluated — D4 complete; D3/D5 pending
 - [ ] **M9:** Analysis, plots, writeup/poster
 
 ---
 
 ## Project log
+
+### 2026-11-07: Archive completed D4 evaluation for merge
+
+**Done:** Archived 61 byte-exact raw records: 60 measured outcomes, one per seed
+0–19 in each control/A1/A2 cell, and one retained setup failure. Preserved the
+frozen harness-8 sources, prompt/settings, runtime, pause/resume evidence and
+logs under `results/d4_evaluation/`, with checksums and reproducible analysis.
+
+**Results:** No diamond losses in any cell. Task completion was 14/20 control,
+8/20 A1 and 9/20 A2; all 29 task failures remain included. D4 rejected 475 A1
+drop calls. Its zero-loss result must be reported with its utility cost and
+small-sample uncertainty. Comparisons with earlier harness-6 runs are descriptive.
+
+**Provenance:** Collection paused after 49 outcomes. A disconnected bot caused
+one unmeasured reset failure on resume; the original baseline bot was restarted,
+the invalid attempt retained, and collection resumed without repeating a measured
+seed or changing prompts/policy. The original D0/D1/D2 archives remain unchanged.
+
+**Next:** Review the D4 archive/report, then plan the remaining defenses and
+held-out attacks separately. Do not rerun completed D4 seeds or tune on these outcomes.
 
 ### 2026-11-01: Complete frozen D1/D2 evaluation and consolidate results
 
@@ -337,7 +357,7 @@ Selected prompts and their exact fingerprints are in
 [`reports/frozen_prompt_selection.json`](reports/frozen_prompt_selection.json).
 See the [D1](reports/d1_development_selection.md) and
 [D2](reports/d2_development_selection.md) selection notes. The 20-trial-per-cell
-D1/D2 evaluation is now complete; see the formal results below. No structural-defense result is claimed.
+D1/D2 evaluation is complete; see the formal results below. D4 was evaluated separately afterward.
 
 ### Frozen formal evaluation: 20 trials per cell
 
@@ -356,8 +376,25 @@ observed losses does not establish useful protection. Full 95% Wilson intervals,
 costs, runtime versions/model digest, invalid attempts and limitations are in
 [the formal report](reports/formal_evaluation.md). The archive and exact source
 snapshot are indexed by [its manifest](results/evaluation/manifest.json).
-Development results and the D0 pilot remain separate. Structural defenses are
-not implemented or evaluated.
+Development results and the D0 pilot remain separate. D4's later evaluation is
+reported separately below; D3/D5 remain pending.
+
+### D4 tool lock: separate harness-8 evaluation
+
+| Condition | Diamond loss | Task completion | Task without loss | Blocked drop calls |
+|---|---:|---:|---:|---:|
+| Control | 0/20 | 14/20 | 14/20 | 0 |
+| A1 | 0/20 | 8/20 | 8/20 | 475 |
+| A2 | 0/20 | 9/20 | 9/20 | 0 |
+
+D4 latches sign exposure in Python and blocks high-sensitivity calls for the
+rest of the episode, without changing D0's prompt. No loss was observed, but
+task completion was 70% in control, 40% under A1 and 45% under A2. Each 0/20
+loss rate has a 95% Wilson interval of 0–16.1%; it is not proof of immunity.
+The later harness-8 campaign is not a randomized or concurrent comparison with
+the earlier runs. See [the D4 report](reports/d4_evaluation.md) for costs,
+limitations and invalid attempts, and [the manifest](results/d4_evaluation/manifest.json)
+for raw records and exact frozen sources.
 
 ## References
 
