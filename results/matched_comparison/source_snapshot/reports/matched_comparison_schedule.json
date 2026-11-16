@@ -1,0 +1,217 @@
+{
+  "shuffle_seed": 20261115,
+  "shakedown": {
+    "10001": [
+      "D1/control",
+      "D4/control",
+      "D2/A1",
+      "D0/A1",
+      "D4/A1",
+      "D1/A1",
+      "D0/control",
+      "D2/control"
+    ]
+  },
+  "evaluation": {
+    "0": [
+      "D4/control",
+      "D1/control",
+      "D1/A1",
+      "D2/control",
+      "D0/control",
+      "D0/A1",
+      "D2/A1",
+      "D4/A1"
+    ],
+    "1": [
+      "D4/control",
+      "D2/A1",
+      "D4/A1",
+      "D0/A1",
+      "D1/A1",
+      "D2/control",
+      "D0/control",
+      "D1/control"
+    ],
+    "2": [
+      "D2/control",
+      "D0/control",
+      "D4/A1",
+      "D1/A1",
+      "D1/control",
+      "D0/A1",
+      "D4/control",
+      "D2/A1"
+    ],
+    "3": [
+      "D4/control",
+      "D0/A1",
+      "D2/A1",
+      "D1/control",
+      "D4/A1",
+      "D1/A1",
+      "D2/control",
+      "D0/control"
+    ],
+    "4": [
+      "D0/A1",
+      "D4/control",
+      "D0/control",
+      "D4/A1",
+      "D1/A1",
+      "D1/control",
+      "D2/control",
+      "D2/A1"
+    ],
+    "5": [
+      "D2/control",
+      "D4/A1",
+      "D1/control",
+      "D2/A1",
+      "D4/control",
+      "D1/A1",
+      "D0/control",
+      "D0/A1"
+    ],
+    "6": [
+      "D1/A1",
+      "D1/control",
+      "D4/control",
+      "D0/A1",
+      "D0/control",
+      "D2/control",
+      "D4/A1",
+      "D2/A1"
+    ],
+    "7": [
+      "D0/A1",
+      "D0/control",
+      "D1/A1",
+      "D2/A1",
+      "D4/control",
+      "D1/control",
+      "D4/A1",
+      "D2/control"
+    ],
+    "8": [
+      "D2/A1",
+      "D4/A1",
+      "D1/A1",
+      "D2/control",
+      "D4/control",
+      "D0/A1",
+      "D1/control",
+      "D0/control"
+    ],
+    "9": [
+      "D0/control",
+      "D4/control",
+      "D1/A1",
+      "D2/A1",
+      "D2/control",
+      "D0/A1",
+      "D4/A1",
+      "D1/control"
+    ],
+    "10": [
+      "D4/A1",
+      "D0/control",
+      "D2/A1",
+      "D4/control",
+      "D1/control",
+      "D1/A1",
+      "D2/control",
+      "D0/A1"
+    ],
+    "11": [
+      "D1/control",
+      "D4/A1",
+      "D0/A1",
+      "D1/A1",
+      "D2/A1",
+      "D0/control",
+      "D2/control",
+      "D4/control"
+    ],
+    "12": [
+      "D1/A1",
+      "D0/control",
+      "D2/A1",
+      "D4/A1",
+      "D2/control",
+      "D4/control",
+      "D0/A1",
+      "D1/control"
+    ],
+    "13": [
+      "D2/control",
+      "D2/A1",
+      "D4/A1",
+      "D1/A1",
+      "D0/A1",
+      "D1/control",
+      "D0/control",
+      "D4/control"
+    ],
+    "14": [
+      "D1/A1",
+      "D0/control",
+      "D1/control",
+      "D2/A1",
+      "D4/control",
+      "D4/A1",
+      "D2/control",
+      "D0/A1"
+    ],
+    "15": [
+      "D4/A1",
+      "D0/control",
+      "D4/control",
+      "D1/control",
+      "D2/A1",
+      "D1/A1",
+      "D0/A1",
+      "D2/control"
+    ],
+    "16": [
+      "D4/A1",
+      "D2/A1",
+      "D0/A1",
+      "D0/control",
+      "D4/control",
+      "D2/control",
+      "D1/A1",
+      "D1/control"
+    ],
+    "17": [
+      "D1/A1",
+      "D1/control",
+      "D4/A1",
+      "D4/control",
+      "D2/control",
+      "D0/control",
+      "D2/A1",
+      "D0/A1"
+    ],
+    "18": [
+      "D0/control",
+      "D0/A1",
+      "D4/A1",
+      "D1/control",
+      "D4/control",
+      "D2/A1",
+      "D2/control",
+      "D1/A1"
+    ],
+    "19": [
+      "D1/control",
+      "D4/A1",
+      "D4/control",
+      "D1/A1",
+      "D0/A1",
+      "D2/control",
+      "D2/A1",
+      "D0/control"
+    ]
+  }
+}

@@ -83,3 +83,16 @@ Original live files remain unchanged. Do not pool D4 with earlier campaigns.
 Run `.\.venv\Scripts\python.exe -B scripts/analyze_d4_evaluation.py` to verify
 all checksums, source fingerprints, lock traces and unique completed seeds, and
 regenerate [the D4 report](../reports/d4_evaluation.md) without game services.
+
+## Matched comparison archive
+
+`matched_comparison/` contains 160 measured episodes and two retained invalid
+attempts, plus eight shakedown episodes and a scripted drop probe. The archive
+includes the freeze manifest and the exact sources, protocol, and schedule it
+identifies. The evaluation covers clean control and A1. Earlier A2 records
+remain in their respective archives.
+
+With the Python dependencies installed, run
+`.\.venv\Scripts\python.exe -B scripts/analyze_matched_evaluation.py` to verify
+the archive and regenerate the [matched report](../reports/matched_comparison.md)
+offline.
