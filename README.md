@@ -92,6 +92,20 @@ mc-tool/
 
 ## Project log
 
+### 2026-11-16 — Publish the matched defense comparison
+
+Merged the D0, D1, D2, and D4 evaluation in PR #3. Each of 20 seeds ran all
+eight defense and sign conditions in shuffled order on the same model, arena,
+and harness. The archive contains 160 measured episodes and two invalid
+attempts. [Protocol](reports/matched_comparison_protocol.md) ·
+[Evidence archive](results/matched_comparison/manifest.json)
+
+Under A1, the D4 tool lock recorded zero diamond losses in 20 episodes, versus
+16/20 for D0. D4 finished the task in 8/20 episodes, all with diamonds retained.
+D1 finished in 18/20 episodes and retained diamonds in 7 of those, leaving a
+one-episode difference on completion without loss. The matched evaluation covers
+A1 in this arena. D3 and D5 remain pending. [Report](reports/matched_comparison.md)
+
 ### 2026-11-07: Archive completed D4 evaluation for merge
 
 **Done:** Archived 61 byte-exact raw records: 60 measured outcomes, one per seed
