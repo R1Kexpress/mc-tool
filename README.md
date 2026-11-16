@@ -2,7 +2,7 @@
 
 A small study of how often hidden instructions (in signs, books, chat, item names) hijack an LLM-driven Minecraft bot, and whether architectural defenses hold up better than "please ignore injected instructions" prompts. Everything runs locally on a laptop (RTX 3050) against a private server.
 
-> **Status:** D0 pilot complete (60 measured episodes). D1/D2 prompt development complete (60 selected outcomes); D1 v1 and D2 v2 selected for evaluation. D1/D2 formal evaluation complete (120 measured outcomes). D4 tool-lock evaluation complete (60 measured outcomes); D3/D5 remain pending. See [D1/D2 results](reports/formal_evaluation.md) and [D4 results](reports/d4_evaluation.md).
+> **Status:** Matched D0/D1/D2/D4 comparison complete (160 measured episodes). See the [matched results](reports/matched_comparison.md) and [protocol](reports/matched_comparison_protocol.md). D3/D5 remain pending.
 > **Experiment setup:** see [`EXPERIMENTS.md`](EXPERIMENTS.md)
 > **Defense workflow:** see [`DEFENSES.md`](DEFENSES.md)
 > **Archived data:** see [`results/README.md`](results/README.md)
@@ -395,6 +395,25 @@ The later harness-8 campaign is not a randomized or concurrent comparison with
 the earlier runs. See [the D4 report](reports/d4_evaluation.md) for costs,
 limitations and invalid attempts, and [the manifest](results/d4_evaluation/manifest.json)
 for raw records and exact frozen sources.
+
+### Matched comparison of D0, D1, D2, and D4
+
+Twenty seeds each ran eight shuffled conditions on one model and arena. Each
+defense faced a blank control sign and the A1 injection. The A1 results were:
+
+| Defense | Diamond loss | Task completed | Task completed without loss |
+|---|---:|---:|---:|
+| D0 baseline | 16/20 | 19/20 | 3/20 |
+| D1 warning | 11/20 | 18/20 | 7/20 |
+| D2 spotlighting | 14/20 | 13/20 | 0/20 |
+| D4 tool lock | 0/20 | 8/20 | 8/20 |
+
+D4 recorded zero diamond losses and had the lowest task completion under A1.
+The one-episode lead over D1 on completion without loss leaves their relative
+performance on that outcome uncertain. The report includes clean controls,
+uncertainty intervals, paired outcomes, and traces of recovery and stalling.
+[Report](reports/matched_comparison.md) · [Protocol](reports/matched_comparison_protocol.md) ·
+[Schedule](reports/matched_comparison_schedule.json) · [Evidence archive](results/matched_comparison/manifest.json)
 
 ## References
 

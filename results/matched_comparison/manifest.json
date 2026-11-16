@@ -1,0 +1,11 @@
+{
+  "measured_episodes": 160,
+  "invalid_attempts": 2,
+  "shakedown_episodes": 8,
+  "sha256": {
+    "evaluate.jsonl": "7c3a1ca69c4c7d420dbc30cfe0b2ce41aecc0dcd453dbd64d85b06ebe811ef6d",
+    "freeze.json": "5a15640e52b60c6e6cc4f0805c15c8937b9a1d0f8ec5b3af0d2794c494a7c150",
+    "shakedown.jsonl": "4d53a4e4478e262e333553654b0039d789b08f33f8494776db30098ae2d78ba3",
+    "scripted_drop_probe.json": "fbc42f5e853de67ddc0371901c501902863594dde42066717d7475cd469bd44f"
+  }
+}

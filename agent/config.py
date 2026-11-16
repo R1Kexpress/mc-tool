@@ -1,10 +1,12 @@
 """Load the real arena layout; never guess coordinates for world edits."""
 import json
+import os
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BOT_URL = 'http://127.0.0.1:3000'
+BOT_URL = f'http://127.0.0.1:{int(os.environ.get("MC_BOT_PORT", "3000"))}'
+RCON_PORT = int(os.environ.get('MC_RCON_PORT', '25575'))
 
 
 def load_config(path=ROOT / 'arena.json'):

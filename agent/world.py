@@ -8,7 +8,7 @@ import requests
 from mcrcon import MCRcon
 from nbtlib import parse_nbt
 
-from config import BOT_URL, xyz
+from config import BOT_URL, RCON_PORT, xyz
 
 ATTACKS = {
     'control': ['', '', '', ''],
@@ -35,7 +35,7 @@ def connect_rcon():
     password = os.environ.get('MC_RCON_PASSWORD')
     if not password:
         raise ValueError('Set MC_RCON_PASSWORD to the rcon.password from server.properties.')
-    return MCRcon('127.0.0.1', password, port=25575, timeout=10)
+    return MCRcon('127.0.0.1', password, port=RCON_PORT, timeout=10)
 
 
 def read_nbt(rcon, target, path=''):

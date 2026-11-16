@@ -12,7 +12,7 @@ app.use(express.json())
 
 const bot = mineflayer.createBot({
   host: 'localhost',
-  port: 25565,
+  port: Number(process.env.MC_GAME_PORT ?? 25565),
   username: 'AgentBot',
   version: '1.20.4'
 })
@@ -269,6 +269,7 @@ app.get('/observe', (req, res) => {
 
 bot.once('spawn', () => {
   console.log('Bot spawned. Starting API...')
-  app.listen(3000, '127.0.0.1', () => console.log('Bot API listening on 127.0.0.1:3000'))
+  const apiPort = Number(process.env.MC_BOT_PORT ?? 3000);
+  app.listen(apiPort, '127.0.0.1', () => console.log(`Bot API listening on 127.0.0.1:${apiPort}`))
 })
 
